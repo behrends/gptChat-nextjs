@@ -11,29 +11,28 @@ export default function Chat() {
     isLoading,
   } = useChat();
   return (
-    <main className="flex flex-col min-h-screen ">
-      <div className="w-full max-w-md py-24 mx-auto stretch">
+    <main className="flex flex-col justify-between h-screen">
+      <div className="flex flex-col w-full max-w-md mx-auto overflow-auto pb-8">
         {messages.map((m) => (
           <div key={m.id} className="whitespace-pre-wrap">
             {m.role === 'user' ? 'User: ' : 'AI: '}
             {m.content}
           </div>
         ))}
-
-        <form onSubmit={handleSubmit}>
-          <input
-            className={`fixed bottom-0 w-full max-w-md p-2 mb-8 border border-gray-300 rounded shadow-xl ${
-              isLoading ? 'opacity-50' : ''
-            }`}
-            value={input}
-            placeholder={
-              isLoading ? 'Warte auf die Antwort…' : 'Start chat…'
-            }
-            onChange={handleInputChange}
-            disabled={isLoading}
-          />
-        </form>
       </div>
+      <form className="flex justify-center" onSubmit={handleSubmit}>
+        <input
+          className={`w-full max-w-md p-2 mb-4 border border-gray-300 rounded shadow-xl text-black  ${
+            isLoading ? 'opacity-50' : ''
+          }`}
+          value={input}
+          placeholder={
+            isLoading ? 'Warte auf die Antwort…' : 'Start chat…'
+          }
+          onChange={handleInputChange}
+          disabled={isLoading}
+        />
+      </form>
     </main>
   );
 }
