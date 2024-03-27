@@ -14,7 +14,7 @@ export default function Chat() {
 
   return (
     <main className="flex flex-col justify-between h-screen">
-      <div className="flex flex-col w-full max-w-md mx-auto overflow-auto">
+      <div className="flex flex-col w-full max-w-3xl p-8 mx-auto overflow-auto">
         {messages.map((m) => (
           <div
             key={m.id}
