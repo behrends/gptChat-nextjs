@@ -14,7 +14,14 @@ export default function Chat() {
     <main className="flex flex-col justify-between h-screen">
       <div className="flex flex-col w-full max-w-md mx-auto overflow-auto pb-8">
         {messages.map((m) => (
-          <div key={m.id} className="whitespace-pre-wrap">
+          <div
+            key={m.id}
+            className={`whitespace-pre-wrap ${
+              m.role === 'user'
+                ? ''
+                : 'mb-2 pb-2 border-b-2 border-neutral-300'
+            }`}
+          >
             {m.role === 'user' ? 'User: ' : 'AI: '}
             {m.content}
           </div>
