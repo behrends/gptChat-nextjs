@@ -14,18 +14,16 @@ export default function Chat() {
 
   return (
     <main className="flex flex-col justify-between h-screen">
-      <div className="flex flex-col w-full max-w-md mx-auto overflow-auto pb-8">
+      <div className="flex flex-col w-full max-w-md mx-auto overflow-auto">
         {messages.map((m) => (
           <div
             key={m.id}
-            className={`whitespace-pre-wrap mb-2 ${
-              m.role === 'user'
-                ? ''
-                : 'pb-2 border-b-2 border-neutral-300'
+            className={`mb-2 ${
+              m.role === 'user' ? '' : 'border-b-2 border-neutral-300'
             }`}
           >
-            <Markdown>
-              {` ${m.role === 'user' ? '**User:**' : '**AI:**'} ${
+            <Markdown className="markdown">
+              {`${m.role === 'user' ? '**User:**' : '**AI:**'} ${
                 m.content
               }`}
             </Markdown>
