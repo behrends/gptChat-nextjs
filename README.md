@@ -3,7 +3,7 @@
 Diese Webanwendung bildet ein Chat-Interface mit der
 [OpenAI](https://openai.com/)-API nach. Die Umsetzung
 ist mit [Next.js](https://nextjs.org) und dem
-[AI-SDK von Vercel](https://sdk.vercel.ai) erfolgt.
+[AI-SDK von Vercel](https://sdk.vercel.ai/docs) erfolgt.
 
 ## Verwendung:
 
